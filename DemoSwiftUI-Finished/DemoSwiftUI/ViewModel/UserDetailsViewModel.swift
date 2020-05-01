@@ -22,17 +22,16 @@ class UserDetailsViewModel: ObservableObject {
         return "\(user.firstName) \(user.lastName)"
     }
     
-    var userAnnotation: UserAnnotation {
-        UserAnnotation(title: userName, coordinate: user.locationCoordinate)
-    }
-    
     var userEmail: String {
         return user.email
     }
-    
 
-    func userImage() -> Image {
-        return Image(user.avatar)
+    var userImage: String {
+        return user.avatar
+    }
+    
+    var userAnnotation: UserAnnotation {
+        UserAnnotation(title: userName, coordinate: user.locationCoordinate)
     }
 
 }

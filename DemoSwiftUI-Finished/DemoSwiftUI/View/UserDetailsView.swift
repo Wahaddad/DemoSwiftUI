@@ -17,9 +17,9 @@ struct UserDetailsView: View {
             UserMapView(userAnnotation: self.userDetailsViewModel.userAnnotation)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
-            CircleAvatar(image: userDetailsViewModel.userImage())
-                .offset(y: -130)
-                .padding(.bottom, -130)
+            CircleAvatar(imageName: userDetailsViewModel.userImage)
+                .offset(y: -110)
+                .padding(.bottom, -110)
             
             Text(self.userDetailsViewModel.userName)
                 .font(.title)
@@ -33,10 +33,10 @@ struct UserDetailsView: View {
 
 struct CircleAvatar: View {
     
-    @State var image: Image
+    @State var imageName: String
     
     var body: some View {
-        image
+        Image(imageName)
             .resizable()
             .frame(width: 200, height: 200)
             .background(Color.white)
